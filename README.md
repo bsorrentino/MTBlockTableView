@@ -1,12 +1,12 @@
 MTBlockTableView
 ================
 
-An iOS Table View that uses block-based delegation instead of protocols.
+An iOS Table View that uses block-based delegation instead of protocols. Try it, we dare you.
 
 Installation
 ============
 
-1. Preferred way is CocoaPods, (not available quite yet).
+1. Preferred way is CocoaPods, just add `pod 'MTBlockTableView'` to your Podfile.
 2. Copy `MTBlockTableView.h` and `MTBlockTableView.m` into your project from the `MTBlockTableView` target
 
 Usage
