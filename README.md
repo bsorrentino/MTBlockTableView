@@ -37,18 +37,3 @@ Discussion
 ==========
 
 The motivation for this library is a proof-of-concept that delegation through protocols could be replaced by delegation through blocks, and in many circumstances would be much move expressive and convenient for programmers. See [this blog post](http://mysteriousdevs.tumblr.com/post/29415817039/blocks-a-case-against-protocol-delegation) for more thorough examples.
-
-Limitations
-===========
-
-* The `UITableViewDelegate` methods are not yet implemented, only the `UITableViewDataSource` methods.
-
-To-dos
-======
-
-1. Finish `UITableViewDelegate` implementation and testing.
-
-Contributing
-============
-
-Be sure to run the tests in the `MTBlockTableViewTests` target before submitting pull requests.
