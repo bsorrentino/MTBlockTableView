@@ -12,7 +12,7 @@ An iOS Table View that uses block-based delegation instead of protocols. Try it,
 
 `MTBlockTableView` is an experimental, drop-in replacement for `UITableView` which uses blocks for all protocol methods:
 
-```
+```objc
 - (void)viewDidLoad
 {
     [super viewDidLoad];
