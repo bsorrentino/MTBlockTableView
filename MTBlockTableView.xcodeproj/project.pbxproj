@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17E2F3461791815400732F76 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 17E2F3451791815400732F76 /* Default-568h@2x.png */; };
 		5F25FF3A15D6A87B00662F86 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F25FF3915D6A87B00662F86 /* Foundation.framework */; };
 		5F25FF3F15D6A87B00662F86 /* MTBlockTableView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5F25FF3E15D6A87B00662F86 /* MTBlockTableView.h */; };
 		5F25FF4115D6A87B00662F86 /* MTBlockTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F25FF4015D6A87B00662F86 /* MTBlockTableView.m */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17E2F3451791815400732F76 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		5F25FF3615D6A87B00662F86 /* libMTBlockTableView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMTBlockTableView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F25FF3915D6A87B00662F86 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5F25FF3D15D6A87B00662F86 /* MTBlockTableView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MTBlockTableView-Prefix.pch"; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		5F25FFC015DAA71C00662F86 /* MTBlockTableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				17E2F3451791815400732F76 /* Default-568h@2x.png */,
 				5F25FFC915DAA71C00662F86 /* AppDelegate.h */,
 				5F25FFCA15DAA71C00662F86 /* AppDelegate.m */,
 				5F25FFCC15DAA71C00662F86 /* MainStoryboard_iPhone.storyboard */,
@@ -320,6 +323,7 @@
 				5F25FFC515DAA71C00662F86 /* InfoPlist.strings in Resources */,
 				5F25FFCE15DAA71C00662F86 /* MainStoryboard_iPhone.storyboard in Resources */,
 				5F25FFD115DAA71C00662F86 /* MainStoryboard_iPad.storyboard in Resources */,
+				17E2F3461791815400732F76 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +603,7 @@
 				5F25FFD615DAA71C00662F86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
