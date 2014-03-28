@@ -141,6 +141,18 @@
     
 }
 
+- (void)testSectionForSectionIndexTitleAtIndex {
+    NSArray *indexTitles = @[@"IndexTitle1", @"IndexTitle2"];
+    
+    [_tableView setSectionForSectionIndexTitleAtIndex:^NSInteger(UITableView *tableview, NSString *title, NSInteger index) {
+        return [indexTitles indexOfObject:title];
+    }];
+    
+    for (NSInteger i = 0; i < [indexTitles count]; i ++) {
+        STAssertEquals([_tableView.dataSource tableView:_tableView sectionForSectionIndexTitle:[indexTitles objectAtIndex:i] atIndex:i], i, nil);
+    }
+}
+
 
 #pragma mark - UITableViewDelegate Protocol Method Tests
 

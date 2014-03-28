@@ -280,7 +280,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
     if (_sectionForSectionIndexTitleAtIndex) {
-        _sectionForSectionIndexTitleAtIndex(tableView, title, index);
+        return _sectionForSectionIndexTitleAtIndex(tableView, title, index);
     }
     
     return 0;
