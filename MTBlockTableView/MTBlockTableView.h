@@ -52,5 +52,43 @@
 @property (nonatomic, strong) void (^willDisplayCellForRowAtIndexPathBlock)(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath);
 @property (nonatomic, strong) NSIndexPath * (^willSelectRowAtIndexPathBlock)(UITableView *tableView, NSIndexPath *indexPath);
 
+#pragma mark - UIScrollViewDelegate blocks (optional)
+
+// any offset changes
+@property (nonatomic, strong) void (^scrollViewDidScroll)(UIScrollView *scrollView);
+// any zoom scale changes
+@property (nonatomic, strong) void (^scrollViewDidZoom)(UIScrollView *scrollView);
+
+// called on start of dragging (may require some time and or distance to move)
+@property (nonatomic, strong) void (^scrollViewWillBeginDragging)(UIScrollView *scrollView);
+
+// called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
+@property (nonatomic, strong) void (^scrollViewWillEndDragging)(UIScrollView *scrollView, CGPoint velocity, CGPoint * targetContentOffset);
+
+// called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
+@property (nonatomic, strong) void (^scrollViewDidEndDragging)(UIScrollView *scrollView,  BOOL decelerate);
+
+// called on finger up as we are moving
+@property (nonatomic, strong) void (^scrollViewWillBeginDecelerating)(UIScrollView *scrollView);
+
+// called when scroll view grinds to a halt
+@property (nonatomic, strong) void (^scrollViewDidEndDecelerating)(UIScrollView *scrollView);
+
+// called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
+@property (nonatomic, strong) void (^scrollViewDidEndScrollingAnimation)(UIScrollView *scrollView);
+
+// return a view that will be scaled. if delegate returns nil, nothing happens
+@property (nonatomic, strong) UIView * (^viewForZoomingInScrollView)(UIScrollView *scrollView);
+
+// called before the scroll view begins zooming its content
+@property (nonatomic, strong) void (^scrollViewWillBeginZooming)(UIScrollView *scrollView, UIView * view);
+// scale between minimum and maximum. called after any 'bounce' animations
+@property (nonatomic, strong) void (^scrollViewDidEndZooming)(UIScrollView *scrollView, UIView * view, CGFloat scale);
+
+@property (nonatomic, strong) BOOL (^scrollViewShouldScrollToTop)(UIScrollView *scrollView);
+// called when scrolling animation finished. may be called immediately if already at top
+@property (nonatomic, strong) void (^scrollViewDidScrollToTop)(UIScrollView *scrollView);
+
+
 @end
 

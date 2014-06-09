@@ -211,6 +211,84 @@
     return indexPath;
 }
 
+#pragma mark - UIScrollViewDelegate blocks (optional)
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if( _scrollViewDidScroll ) {
+        _scrollViewDidScroll( scrollView );
+    }
+}
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    if( _scrollViewDidZoom ) {
+        _scrollViewDidZoom( scrollView );
+    }
+}
+
+// called on start of dragging (may require some time and or distance to move)
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if( _scrollViewWillBeginDragging ) {
+        _scrollViewWillBeginDragging( scrollView );
+    }
+}
+
+// called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    if( _scrollViewWillEndDragging ) {
+        _scrollViewWillEndDragging( scrollView, velocity, targetContentOffset );
+    }
+}
+
+// called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if( _scrollViewDidEndDragging ) {
+        _scrollViewDidEndDragging( scrollView, decelerate );
+    }
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {  // called on finger up as we are moving
+    if( _scrollViewWillBeginDecelerating ) {
+        _scrollViewWillBeginDecelerating( scrollView );
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {      // called when scroll view grinds to a halt
+    if( _scrollViewDidEndDecelerating ) {
+        _scrollViewDidEndDecelerating( scrollView );
+    }
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView { // called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
+    if( _scrollViewDidEndScrollingAnimation ) {
+        _scrollViewDidEndScrollingAnimation( scrollView );
+    }
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {    // return a view that will be scaled. if delegate returns nil, nothing happens
+    return ( _viewForZoomingInScrollView ) ? _viewForZoomingInScrollView( scrollView ) : nil;
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view { // called before the scroll view begins zooming its content
+    if( _scrollViewWillBeginZooming) {
+        _scrollViewWillBeginZooming( scrollView, view );
+    }
+}
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale { // scale between minimum and maximum. called after any 'bounce' animations
+    if( _scrollViewDidEndZooming ) {
+        _scrollViewDidEndZooming( scrollView, view, scale );
+    }
+}
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {   // return a yes if you want to scroll to the top. if not defined, assumes YES
+    return ( _scrollViewShouldScrollToTop )  ? _scrollViewShouldScrollToTop(scrollView) : YES;
+}
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {      // called when scrolling animation finished. may be called immediately if already at top
+    if( _scrollViewDidScrollToTop ) {
+        _scrollViewDidScrollToTop( scrollView );
+    }
+}
 
 
 
